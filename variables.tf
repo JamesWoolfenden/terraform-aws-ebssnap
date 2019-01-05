@@ -13,16 +13,16 @@ variable "cron_expression" {
 }
 
 variable "regions" {
-  type = "list"
-  description="Which Regions ro apply the snapshots too"
+  type        = "list"
+  description = "Which Regions to apply the snapshots too"
 }
 
 variable "common_tags" {
-  type = "map"
-  description="Implements the common tags scheme"
+  type        = "map"
+  description = "Implements the common tags scheme"
 }
 
 variable "snapshot_name" {
-  type="string"
-  description="The name of the snapshot"
+  type        = "string"
+  description = "The name of the snapshot"
 }
