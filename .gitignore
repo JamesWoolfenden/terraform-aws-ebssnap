@@ -9,3 +9,5 @@
 *.ini
 tmp
 lambda
+*~HEAD
+*backup
