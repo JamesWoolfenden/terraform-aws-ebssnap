@@ -4,8 +4,7 @@
 
 # terraform-aws-autoebssnapshot [![Build Status](https://travis-ci.com/JamesWoolfenden/terraform-aws-autoebssnapshot.svg?branch=master)](https://travis-ci.com/JamesWoolfenden/terraform-aws-autoebssnapshot) [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-autoebssnapshot.svg)](https://github.com/JamesWoolfenden/terraform-aws-autoebssnapshot/releases/latest)
 
-
-Terraform module to provision a secure terraform state bucket for team use of IAC.
+A Terraform module to automate the taking of backup snapshots.
 
 ---
 
@@ -47,21 +46,22 @@ regions          = ["eu-west-1","eu-west-2","eu-west-3"]
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| EC2_INSTANCE_TAG | Tag to identify the EC2 target instances of the Lambda Function | string | `Backup` | no |
-| RETENTION_DAYS | Numbers of Days that the EBS Snapshots will be stored (INT) | string | `5` | no |
-| common_tags | Implements the common tags scheme | map | - | yes |
-| cron_expression | Cron expression for firing up the Lambda Function | string | - | yes |
-| regions | Which Regions to apply the snapshots too | list | - | yes |
-| snapshot_name | The name of the snapshot | string | - | yes |
+| Name             | Description                                                     |  Type  | Default  | Required |
+| ---------------- | --------------------------------------------------------------- | :----: | :------: | :------: |
+| EC2_INSTANCE_TAG | Tag to identify the EC2 target instances of the Lambda Function | string | `Backup` |    no    |
+| RETENTION_DAYS   | Numbers of Days that the EBS Snapshots will be stored (INT)     | string |   `5`    |    no    |
+| common_tags      | Implements the common tags scheme                               |  map   |    -     |   yes    |
+| cron_expression  | Cron expression for firing up the Lambda Function               | string |    -     |   yes    |
+| depends_on       | This is a way to make a module depends on, which isnt built in. |  list  | `<list>` |    no    |
+| regions          | Which Regions to apply the snapshots too                        |  list  |    -     |   yes    |
+| snapshot_name    | The name of the snapshot                                        | string |    -     |   yes    |
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| aws_iam_role_arn | - |
-| lambda_function_name | - |
+| Name                 | Description |
+| -------------------- | ----------- |
+| aws_iam_role_arn     | -           |
+| lambda_function_name | -           |
 
 ## Makefile Targets
 
@@ -128,6 +128,7 @@ See [LICENSE](LICENSE) for full details.
     specific language governing permissions and limitations
     under the License.
 
+
 ### Contributors
 
 |  [![James Woolfenden][jameswoolfenden_avatar]][jameswoolfenden_homepage]<br/>[James Woolfenden][jameswoolfenden_homepage] |
@@ -135,6 +136,8 @@ See [LICENSE](LICENSE) for full details.
 
   [jameswoolfenden_homepage]: https://github.com/jameswoolfenden
   [jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150
+
+
 
 [logo]: docs/slalom-logo.png
 [website]: https://slalom.com

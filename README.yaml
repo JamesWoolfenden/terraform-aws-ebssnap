@@ -50,7 +50,7 @@ related:
 
 # Short description of this project
 description: |-
-  Terraform module to provision a secure terraform state bucket for team use of IAC.
+  A Terraform module to automate the taking of backup snapshots.
 
 # How to use this project
 usage: |-
