@@ -10,7 +10,7 @@ repos:
     rev: v1.1.6
     hooks:
       - id: forbid-tabs
-        exclude_types: [python, javascript, dtd, markdown, makefile]
+        exclude_types: [python, javascript, dtd, markdown, makefile, xml]
         exclude: binary|\.bin$
   - repo: git://github.com/kintoandar/pre-commit.git
     rev: v2.1.0
@@ -28,7 +28,7 @@ repos:
     rev: 1.0.4
     hooks:
       - id: shell-lint
-  - repo: https://github.com/prettier/prettier
-    rev: 1.15.3
+  - repo: git://github.com/igorshubovych/markdownlint-cli
+    rev: v0.13.0
     hooks:
-      - id: prettier
+      - id: markdownlint
