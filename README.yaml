@@ -5,7 +5,7 @@
 #
 
 # Name of this project
-name: terraform-aws-autoebssnapshot
+name: terraform-aws-ebssnap
 
 # Tags of this project
 tags:
@@ -32,16 +32,16 @@ copyrights:
     year: "2019"
 
 # Canonical GitHub repo
-github_repo: JamesWoolfenden/terraform-aws-autoebssnapshot
+github_repo: JamesWoolfenden/terraform-aws-ebssnap
 
 # Badges to display
 badges:
   - name: "Build Status"
-    image: "https://travis-ci.com/JamesWoolfenden/terraform-aws-autoebssnapshot.svg?branch=master"
-    url: "https://travis-ci.com/JamesWoolfenden/terraform-aws-autoebssnapshot"
+    image: "https://travis-ci.com/JamesWoolfenden/terraform-aws-ebssnap.svg?branch=master"
+    url: "https://travis-ci.com/JamesWoolfenden/terraform-aws-ebssnap"
   - name: "Latest Release"
-    image: "https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-autoebssnapshot.svg"
-    url: "https://github.com/JamesWoolfenden/terraform-aws-autoebssnapshot/releases/latest"
+    image: "https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-ebssnap.svg"
+    url: "https://github.com/JamesWoolfenden/terraform-aws-ebssnap/releases/latest"
 
 related:
   - name: "terraform-aws-s3"
@@ -58,7 +58,7 @@ usage: |-
 
   ``` HCL
   module "ebsnapshot" {
-    source          = "github.com/jameswoolfenden/terraform-aws-autoebssnapshot"
+    source          = "github.com/jameswoolfenden/terraform-aws-ebssnap"
     common_tags     = "${var.common_tags}"
     snapshot_name   = "${local.snapshot_name}"
     cron_expression = "${var.cron_expression}"

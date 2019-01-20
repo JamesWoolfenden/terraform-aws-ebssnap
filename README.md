@@ -2,7 +2,7 @@
 
 [![Slalom][logo]](https://slalom.com)
 
-# terraform-aws-autoebssnapshot [![Build Status](https://travis-ci.com/JamesWoolfenden/terraform-aws-autoebssnapshot.svg?branch=master)](https://travis-ci.com/JamesWoolfenden/terraform-aws-autoebssnapshot) [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-autoebssnapshot.svg)](https://github.com/JamesWoolfenden/terraform-aws-autoebssnapshot/releases/latest)
+# terraform-aws-ebssnap [![Build Status](https://travis-ci.com/JamesWoolfenden/terraform-aws-ebssnap.svg?branch=master)](https://travis-ci.com/JamesWoolfenden/terraform-aws-ebssnap) [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-ebssnap.svg)](https://github.com/JamesWoolfenden/terraform-aws-ebssnap/releases/latest)
 
 A Terraform module to automate the taking of backup snapshots.
 
@@ -18,7 +18,7 @@ Include this repository as a module in your existing terraform code:
 
 ``` HCL
 module "ebsnapshot" {
-  source          = "github.com/jameswoolfenden/terraform-aws-autoebssnapshot"
+  source          = "github.com/jameswoolfenden/terraform-aws-ebssnap"
   common_tags     = "${var.common_tags}"
   snapshot_name   = "${local.snapshot_name}"
   cron_expression = "${var.cron_expression}"
@@ -89,7 +89,7 @@ Check out these related projects.
 
 **Got a question?**
 
-File a GitHub [issue](https://github.com/JamesWoolfenden/terraform-aws-autoebssnapshot/issues).
+File a GitHub [issue](https://github.com/JamesWoolfenden/terraform-aws-ebssnap/issues).
 
 ## Slack Community
 
@@ -99,7 +99,7 @@ You can join the Cloudposse community [Open Source Community][slack] on Slack.
 
 ### Bug Reports & Feature Requests
 
-Please use the [issue tracker](https://github.com/JamesWoolfenden/terraform-aws-autoebssnapshot/issues) to report any bugs or file feature requests.
+Please use the [issue tracker](https://github.com/JamesWoolfenden/terraform-aws-ebssnap/issues) to report any bugs or file feature requests.
 
 ## Copyrights
 
@@ -146,9 +146,9 @@ See [LICENSE](LICENSE) for full details.
 [linkedin]: https://www.linkedin.com/company/slalom-consulting/
 [twitter]: https://twitter.com/Slalom
 
-[share_twitter]: https://twitter.com/intent/tweet/?text=terraform-aws-autoebssnapshot&url=https://github.com/JamesWoolfenden/terraform-aws-autoebssnapshot
-[share_linkedin]: https://www.linkedin.com/shareArticle?mini=true&title=terraform-aws-autoebssnapshot&url=https://github.com/JamesWoolfenden/terraform-aws-autoebssnapshot
-[share_reddit]: https://reddit.com/submit/?url=https://github.com/JamesWoolfenden/terraform-aws-autoebssnapshot
-[share_facebook]: https://facebook.com/sharer/sharer.php?u=https://github.com/JamesWoolfenden/terraform-aws-autoebssnapshot
-[share_googleplus]: https://plus.google.com/share?url=https://github.com/JamesWoolfenden/terraform-aws-autoebssnapshot
-[share_email]: mailto:?subject=terraform-aws-autoebssnapshot&body=https://github.com/JamesWoolfenden/terraform-aws-autoebssnapshot
+[share_twitter]: https://twitter.com/intent/tweet/?text=terraform-aws-ebssnap&url=https://github.com/JamesWoolfenden/terraform-aws-ebssnap
+[share_linkedin]: https://www.linkedin.com/shareArticle?mini=true&title=terraform-aws-ebssnap&url=https://github.com/JamesWoolfenden/terraform-aws-ebssnap
+[share_reddit]: https://reddit.com/submit/?url=https://github.com/JamesWoolfenden/terraform-aws-ebssnap
+[share_facebook]: https://facebook.com/sharer/sharer.php?u=https://github.com/JamesWoolfenden/terraform-aws-ebssnap
+[share_googleplus]: https://plus.google.com/share?url=https://github.com/JamesWoolfenden/terraform-aws-ebssnap
+[share_email]: mailto:?subject=terraform-aws-ebssnap&body=https://github.com/JamesWoolfenden/terraform-aws-ebssnap
