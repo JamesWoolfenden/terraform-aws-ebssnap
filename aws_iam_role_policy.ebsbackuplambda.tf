@@ -1,7 +1,7 @@
 resource "aws_iam_role_policy" "ebsbackuplambda" {
   name   = "ebsbackuplambda-${random_string.label.result}"
-  role   = "${aws_iam_role.ebsbackuplambda.id}"
-  policy = "${data.aws_iam_policy_document.ebsbackuplambda.json}"
+  role   = aws_iam_role.ebsbackuplambda.id
+  policy = data.aws_iam_policy_document.ebsbackuplambda.json
 }
 
 data "aws_iam_policy_document" "ebsbackuplambda" {
