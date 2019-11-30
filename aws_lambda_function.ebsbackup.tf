@@ -7,9 +7,7 @@ resource "aws_lambda_function" "ebsbackup" {
   handler          = "ebs_bckup.lambda_handler"
   timeout          = "60"
   publish          = true
-  depends_on       = ["template_dir.vars"]
+  depends_on       = [template_dir.vars]
 
-  tags = "${merge(var.common_tags
-    , map("Name", "${var.snapshot_name}")
-  )}"
+  tags = var.common_tags
 }

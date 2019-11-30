@@ -10,6 +10,7 @@ Include this repository as a module in your existing terraform code:
 ``` HCL
 module "ebsnapshot" {
   source          = "github.com/jameswoolfenden/terraform-aws-ebssnap"
+  version         = "0.1.1"
   common_tags     = var.common_tags
   snapshot_name   = local.snapshot_name
   cron_expression = var.cron_expression
@@ -17,7 +18,7 @@ module "ebsnapshot" {
 }
 ```
 
-Creates a lambda and cloudwatch event to look for any instances that have the specfied tag and then takes a snapshot of that volume.
+Creates a lambda and cloudwatch event to look for any instances that have the specified tag and then takes a snapshot of that volume.
 This is a heavily modified version of this module: <https://github.com/kgorskowski/ebs_bckup>
 
 Set up your Terraform tf vars file to look something like:
@@ -50,8 +51,8 @@ regions          = ["eu-west-1","eu-west-2","eu-west-3"]
 
 | Name | Description |
 |------|-------------|
-| aws\_iam\_role\_arn |  |
-| lambda\_function\_name |  |
+| lambda |  |
+| role | hashicorp required |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
