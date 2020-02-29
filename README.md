@@ -1,13 +1,20 @@
 
-# terraform-aws-ebssnap [![Build Status](https://travis-ci.com/JamesWoolfenden/terraform-aws-ebssnap.svg?branch=master)](https://travis-ci.com/JamesWoolfenden/terraform-aws-ebssnap) [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-ebssnap.svg)](https://github.com/JamesWoolfenden/terraform-aws-ebssnap/releases/latest)
+# terraform-aws-ebssnap
+
+[![Build Status](https://travis-ci.com/JamesWoolfenden/terraform-aws-ebssnap.svg?branch=master)](https://travis-ci.com/JamesWoolfenden/terraform-aws-ebssnap)
+[![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-ebssnap.svg)](https://github.com/JamesWoolfenden/terraform-aws-ebssnap/releases/latest)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+[![pre-commit](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
 
 A Terraform module to automate the taking of backup snapshots.
+
+---
 
 ## Usage
 
 Include this repository as a module in your existing terraform code:
 
-``` HCL
+```HCL
 module "ebsnapshot" {
   source          = "JamesWoolfenden/ebssnap/aws"
   version         = "0.2.9"
@@ -21,7 +28,7 @@ module "ebsnapshot" {
 Creates a lambda and cloudwatch event to look for any instances that have the specified tag and then takes a snapshot of that volume.
 This is a heavily modified version of this module: <https://github.com/kgorskowski/ebs_bckup>
 
-Set up your Terraform tf.vars file to look something like:
+Set up your Terraform **tf.vars** file to look something like:
 
 ``` HCL
 common_tags = {
@@ -36,23 +43,32 @@ cron_expression  = "45 1 * * ? *"
 regions          = ["eu-west-1","eu-west-2","eu-west-3"]
 ```
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Providers
+
+| Name | Version |
+|------|---------|
+| archive | n/a |
+| aws | n/a |
+| random | n/a |
+| template | n/a |
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| EC2\_INSTANCE\_TAG | Tag to identify the EC2 target instances of the Lambda Function | string | `"Backup"` | no |
-| RETENTION\_DAYS | Numbers of Days that the EBS Snapshots will be stored (INT) | string | `"5"` | no |
-| common\_tags | Implements the common tags scheme | map | n/a | yes |
-| cron\_expression | Cron expression for firing up the Lambda Function | string | n/a | yes |
-| regions | Which Regions to apply the snapshots too | list | n/a | yes |
-| snapshot\_name | The name of the snapshot | string | n/a | yes |
+|------|-------------|------|---------|:-----:|
+| EC2\_INSTANCE\_TAG | Tag to identify the EC2 target instances of the Lambda Function | `string` | `"Backup"` | no |
+| RETENTION\_DAYS | Numbers of Days that the EBS Snapshots will be stored (INT) | `string` | `5` | no |
+| common\_tags | Implements the common tags scheme | `map` | n/a | yes |
+| cron\_expression | Cron expression for firing up the Lambda Function | `string` | n/a | yes |
+| regions | Which Regions to apply the snapshots too | `list` | n/a | yes |
+| snapshot\_name | The name of the snapshot | `string` | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| lambda |  |
-| role |  |
+| lambda | n/a |
+| role | n/a |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
@@ -64,10 +80,10 @@ Check out these related projects.
 
 ### Contributors
 
-  [![James Woolfenden][jameswoolfenden_avatar]][jameswoolfenden_homepage]<br/>[James Woolfenden][jameswoolfenden_homepage]
+[![James Woolfenden][jameswoolfenden_avatar]][jameswoolfenden_homepage]<br/>[James Woolfenden][jameswoolfenden_homepage]
 
-  [jameswoolfenden_homepage]: https://github.com/jameswoolfenden
-  [jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150
+[jameswoolfenden_homepage]: https://github.com/jameswoolfenden
+[jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150
 
 [logo]: https://gist.githubusercontent.com/JamesWoolfenden/5c457434351e9fe732ca22b78fdd7d5e/raw/15933294ae2b00f5dba6557d2be88f4b4da21201/slalom-logo.png
 [website]: https://slalom.com
