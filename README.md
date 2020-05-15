@@ -1,7 +1,8 @@
+[![Slalom][logo]](https://slalom.com)
 
 # terraform-aws-ebssnap
 
-[![Build Status](https://travis-ci.com/JamesWoolfenden/terraform-aws-ebssnap.svg?branch=master)](https://travis-ci.com/JamesWoolfenden/terraform-aws-ebssnap)
+[![Build Status](https://github.com/JamesWoolfenden/terraform-aws-ebssnap/workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-aws-ebssnap)
 [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-ebssnap.svg)](https://github.com/JamesWoolfenden/terraform-aws-ebssnap/releases/latest)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![pre-commit](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
@@ -62,6 +63,7 @@ regions          = ["eu-west-1","eu-west-2","eu-west-3"]
 | cron\_expression | Cron expression for firing up the Lambda Function | `string` | n/a | yes |
 | regions | Which Regions to apply the snapshots too | `list` | n/a | yes |
 | snapshot\_name | The name of the snapshot | `string` | n/a | yes |
+| tracing\_mode | Xray tracing mode | `string` | `"Active"` | no |
 
 ## Outputs
 

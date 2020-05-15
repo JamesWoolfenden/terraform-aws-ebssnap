@@ -29,3 +29,9 @@ variable "snapshot_name" {
   type        = string
   description = "The name of the snapshot"
 }
+
+variable "tracing_mode" {
+  description = "Xray tracing mode"
+  default     = "Active"
+  type        = string
+}

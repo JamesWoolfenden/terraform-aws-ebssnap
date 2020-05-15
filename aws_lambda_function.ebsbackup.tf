@@ -10,4 +10,7 @@ resource "aws_lambda_function" "ebsbackup" {
   depends_on       = [template_dir.vars]
 
   tags = var.common_tags
+  tracing_config {
+    mode = var.tracing_mode
+  }
 }
