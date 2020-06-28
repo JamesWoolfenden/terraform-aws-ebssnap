@@ -44,6 +44,10 @@ cron_expression  = "45 1 * * ? *"
 regions          = ["eu-west-1","eu-west-2","eu-west-3"]
 ```
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Requirements
+
+No requirements.
+
 ## Providers
 
 | Name | Version |
@@ -56,7 +60,7 @@ regions          = ["eu-west-1","eu-west-2","eu-west-3"]
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:-----:|
+|------|-------------|------|---------|:--------:|
 | EC2\_INSTANCE\_TAG | Tag to identify the EC2 target instances of the Lambda Function | `string` | `"Backup"` | no |
 | RETENTION\_DAYS | Numbers of Days that the EBS Snapshots will be stored (INT) | `string` | `5` | no |
 | common\_tags | Implements the common tags scheme | `map` | n/a | yes |
@@ -90,8 +94,8 @@ Check out these related projects.
 [logo]: https://gist.githubusercontent.com/JamesWoolfenden/5c457434351e9fe732ca22b78fdd7d5e/raw/15933294ae2b00f5dba6557d2be88f4b4da21201/slalom-logo.png
 [website]: https://slalom.com
 [github]: https://github.com/jameswoolfenden
-[linkedin]: https://www.linkedin.com/company/slalom-consulting/
-[twitter]: https://twitter.com/Slalom
+[linkedin]: https://www.linkedin.com/in/jameswoolfenden/
+[twitter]: https://twitter.com/JimWoolfenden
 
 [share_twitter]: https://twitter.com/intent/tweet/?text=terraform-aws-ebssnap&url=https://github.com/JamesWoolfenden/terraform-aws-ebssnap
 [share_linkedin]: https://www.linkedin.com/shareArticle?mini=true&title=terraform-aws-ebssnap&url=https://github.com/JamesWoolfenden/terraform-aws-ebssnap
