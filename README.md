@@ -1,5 +1,3 @@
-[![Slalom][logo]](https://slalom.com)
-
 # terraform-aws-ebssnap
 
 [![Build Status](https://github.com/JamesWoolfenden/terraform-aws-ebssnap/workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-aws-ebssnap)
@@ -31,7 +29,7 @@ This is a heavily modified version of this module: <https://github.com/kgorskows
 
 Set up your Terraform **tf.vars** file to look something like:
 
-``` HCL
+```HCL
 common_tags = {
     application = "terraform"
     module      = "auto-ebs-snapshot"
@@ -43,38 +41,40 @@ RETENTION_DAYS   = 10
 cron_expression  = "45 1 * * ? *"
 regions          = ["eu-west-1","eu-west-2","eu-west-3"]
 ```
+
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
 ## Requirements
 
 No requirements.
 
 ## Providers
 
-| Name | Version |
-|------|---------|
-| archive | n/a |
-| aws | n/a |
-| random | n/a |
-| template | n/a |
+| Name     | Version |
+| -------- | ------- |
+| archive  | n/a     |
+| aws      | n/a     |
+| random   | n/a     |
+| template | n/a     |
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| EC2\_INSTANCE\_TAG | Tag to identify the EC2 target instances of the Lambda Function | `string` | `"Backup"` | no |
-| RETENTION\_DAYS | Numbers of Days that the EBS Snapshots will be stored (INT) | `string` | `5` | no |
-| common\_tags | Implements the common tags scheme | `map` | n/a | yes |
-| cron\_expression | Cron expression for firing up the Lambda Function | `string` | n/a | yes |
-| regions | Which Regions to apply the snapshots too | `list` | n/a | yes |
-| snapshot\_name | The name of the snapshot | `string` | n/a | yes |
-| tracing\_mode | Xray tracing mode | `string` | `"Active"` | no |
+| Name             | Description                                                     | Type     | Default    | Required |
+| ---------------- | --------------------------------------------------------------- | -------- | ---------- | :------: |
+| EC2_INSTANCE_TAG | Tag to identify the EC2 target instances of the Lambda Function | `string` | `"Backup"` |    no    |
+| RETENTION_DAYS   | Numbers of Days that the EBS Snapshots will be stored (INT)     | `string` | `5`        |    no    |
+| common_tags      | Implements the common tags scheme                               | `map`    | n/a        |   yes    |
+| cron_expression  | Cron expression for firing up the Lambda Function               | `string` | n/a        |   yes    |
+| regions          | Which Regions to apply the snapshots too                        | `list`   | n/a        |   yes    |
+| snapshot_name    | The name of the snapshot                                        | `string` | n/a        |   yes    |
+| tracing_mode     | Xray tracing mode                                               | `string` | `"Active"` |    no    |
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| lambda | n/a |
-| role | n/a |
+| Name   | Description |
+| ------ | ----------- |
+| lambda | n/a         |
+| role   | n/a         |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
@@ -90,13 +90,9 @@ Check out these related projects.
 
 [jameswoolfenden_homepage]: https://github.com/jameswoolfenden
 [jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150
-
-[logo]: https://gist.githubusercontent.com/JamesWoolfenden/5c457434351e9fe732ca22b78fdd7d5e/raw/15933294ae2b00f5dba6557d2be88f4b4da21201/slalom-logo.png
-[website]: https://slalom.com
 [github]: https://github.com/jameswoolfenden
 [linkedin]: https://www.linkedin.com/in/jameswoolfenden/
 [twitter]: https://twitter.com/JimWoolfenden
-
 [share_twitter]: https://twitter.com/intent/tweet/?text=terraform-aws-ebssnap&url=https://github.com/JamesWoolfenden/terraform-aws-ebssnap
 [share_linkedin]: https://www.linkedin.com/shareArticle?mini=true&title=terraform-aws-ebssnap&url=https://github.com/JamesWoolfenden/terraform-aws-ebssnap
 [share_reddit]: https://reddit.com/submit/?url=https://github.com/JamesWoolfenden/terraform-aws-ebssnap
