@@ -43,38 +43,37 @@ regions          = ["eu-west-1","eu-west-2","eu-west-3"]
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-
 ## Requirements
 
 No requirements.
 
 ## Providers
 
-| Name     | Version |
-| -------- | ------- |
-| archive  | n/a     |
-| aws      | n/a     |
-| random   | n/a     |
-| template | n/a     |
+| Name | Version |
+|------|---------|
+| archive | n/a |
+| aws | n/a |
+| random | n/a |
+| template | n/a |
 
 ## Inputs
 
-| Name             | Description                                                     | Type     | Default    | Required |
-| ---------------- | --------------------------------------------------------------- | -------- | ---------- | :------: |
-| EC2_INSTANCE_TAG | Tag to identify the EC2 target instances of the Lambda Function | `string` | `"Backup"` |    no    |
-| RETENTION_DAYS   | Numbers of Days that the EBS Snapshots will be stored (INT)     | `string` | `5`        |    no    |
-| common_tags      | Implements the common tags scheme                               | `map`    | n/a        |   yes    |
-| cron_expression  | Cron expression for firing up the Lambda Function               | `string` | n/a        |   yes    |
-| regions          | Which Regions to apply the snapshots too                        | `list`   | n/a        |   yes    |
-| snapshot_name    | The name of the snapshot                                        | `string` | n/a        |   yes    |
-| tracing_mode     | Xray tracing mode                                               | `string` | `"Active"` |    no    |
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| EC2\_INSTANCE\_TAG | Tag to identify the EC2 target instances of the Lambda Function | `string` | `"Backup"` | no |
+| RETENTION\_DAYS | Numbers of Days that the EBS Snapshots will be stored (INT) | `string` | `5` | no |
+| common\_tags | Implements the common tags scheme | `map` | n/a | yes |
+| cron\_expression | Cron expression for firing up the Lambda Function | `string` | n/a | yes |
+| regions | Which Regions to apply the snapshots too | `list` | n/a | yes |
+| snapshot\_name | The name of the snapshot | `string` | n/a | yes |
+| tracing\_mode | Xray tracing mode | `string` | `"Active"` | no |
 
 ## Outputs
 
-| Name   | Description |
-| ------ | ----------- |
-| lambda | n/a         |
-| role   | n/a         |
+| Name | Description |
+|------|-------------|
+| lambda | n/a |
+| role | n/a |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
