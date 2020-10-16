@@ -11,6 +11,6 @@ resource "aws_lambda_function" "ebsbackup" {
 
   tags = var.common_tags
   tracing_config {
-    mode = var.tracing_mode
+    mode = "PassThrough"
   }
 }
