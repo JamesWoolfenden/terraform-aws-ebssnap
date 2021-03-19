@@ -5,6 +5,8 @@ resource "aws_iam_role_policy" "ebsbackuplambda" {
 }
 
 data "aws_iam_policy_document" "ebsbackuplambda" {
+  #checkov:skip=CKV_AWS_111:A general role for many ec2 instances
+  #checkov:skip=CKV_AWS_109:A general role for many ec2 instances
   statement {
     actions = [
       "logs:*",
