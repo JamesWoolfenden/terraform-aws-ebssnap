@@ -55,48 +55,50 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| archive | n/a |
-| aws | n/a |
-| random | n/a |
-| template | n/a |
+| <a name="provider_archive"></a> [archive](#provider\_archive) | n/a |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
+| <a name="provider_random"></a> [random](#provider\_random) | n/a |
+| <a name="provider_template"></a> [template](#provider\_template) | n/a |
 
 ## Modules
 
-No Modules.
+No modules.
 
 ## Resources
 
-| Name |
-|------|
-| [archive_file](https://registry.terraform.io/providers/hashicorp/archive/latest/docs/data-sources/file) |
-| [aws_cloudwatch_event_rule](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_event_rule) |
-| [aws_cloudwatch_event_target](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_event_target) |
-| [aws_iam_policy_document](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) |
-| [aws_iam_role](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) |
-| [aws_iam_role_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy) |
-| [aws_lambda_function](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function) |
-| [aws_lambda_permission](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_permission) |
-| [random_string](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) |
-| [template_dir](https://registry.terraform.io/providers/hashicorp/template/latest/docs/resources/dir) |
+| Name | Type |
+|------|------|
+| [aws_cloudwatch_event_rule.ebsbackuptimer](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_event_rule) | resource |
+| [aws_cloudwatch_event_target.runebsbackuplambda](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_event_target) | resource |
+| [aws_iam_role.ebsbackuplambda](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
+| [aws_iam_role_policy.ebsbackuplambda](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy) | resource |
+| [aws_lambda_function.ebsbackup](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function) | resource |
+| [aws_lambda_permission.allow_cloudwatch_to_call](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_permission) | resource |
+| [random_string.label](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
+| [template_dir.vars](https://registry.terraform.io/providers/hashicorp/template/latest/docs/resources/dir) | resource |
+| [archive_file.lambda_zip](https://registry.terraform.io/providers/hashicorp/archive/latest/docs/data-sources/file) | data source |
+| [aws_iam_policy_document.ebsbackuplambda](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| EC2\_INSTANCE\_TAG | Tag to identify the EC2 target instances of the Lambda Function | `string` | `"Backup"` | no |
-| RETENTION\_DAYS | Numbers of Days that the EBS Snapshots will be stored (INT) | `string` | `5` | no |
-| common\_tags | Implements the common tags scheme | `map(any)` | n/a | yes |
-| cron\_expression | Cron expression for firing up the Lambda Function | `string` | n/a | yes |
-| regions | Which Regions to apply the snapshots too | `list(any)` | n/a | yes |
-| snapshot\_name | The name of the snapshot | `string` | n/a | yes |
-| tracing\_mode | Xray tracing mode | `string` | `"Active"` | no |
+| <a name="input_EC2_INSTANCE_TAG"></a> [EC2\_INSTANCE\_TAG](#input\_EC2\_INSTANCE\_TAG) | Tag to identify the EC2 target instances of the Lambda Function | `string` | `"Backup"` | no |
+| <a name="input_RETENTION_DAYS"></a> [RETENTION\_DAYS](#input\_RETENTION\_DAYS) | Numbers of Days that the EBS Snapshots will be stored (INT) | `string` | `5` | no |
+| <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | Implements the common tags scheme | `map(any)` | n/a | yes |
+| <a name="input_cron_expression"></a> [cron\_expression](#input\_cron\_expression) | Cron expression for firing up the Lambda Function | `string` | n/a | yes |
+| <a name="input_regions"></a> [regions](#input\_regions) | Which Regions to apply the snapshots too | `list(any)` | n/a | yes |
+| <a name="input_runtime"></a> [runtime](#input\_runtime) | n/a | `string` | `"python2.7"` | no |
+| <a name="input_snapshot_name"></a> [snapshot\_name](#input\_snapshot\_name) | The name of the snapshot | `string` | n/a | yes |
+| <a name="input_timeout"></a> [timeout](#input\_timeout) | Lambda Timeout in seconds | `number` | `60` | no |
+| <a name="input_tracing_mode"></a> [tracing\_mode](#input\_tracing\_mode) | Xray tracing mode | `string` | `"Active"` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| lambda | n/a |
-| role | n/a |
+| <a name="output_lambda"></a> [lambda](#output\_lambda) | n/a |
+| <a name="output_role"></a> [role](#output\_role) | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Related Projects
