@@ -35,3 +35,13 @@ variable "tracing_mode" {
   default     = "Active"
   type        = string
 }
+
+variable "runtime" {
+  default="python2.7"
+}
+
+variable "timeout" {
+  type=number
+  description="Lambda Timeout in seconds"
+  default=60
+}
