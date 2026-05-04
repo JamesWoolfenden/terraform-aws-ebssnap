@@ -3,8 +3,9 @@ resource "aws_iam_role_policy" "ebsbackuplambda" {
   role   = aws_iam_role.ebsbackuplambda.id
   policy = data.aws_iam_policy_document.ebsbackuplambda.json
 }
-
 data "aws_iam_policy_document" "ebsbackuplambda" {
+  # checkov:skip=CKV_AWS_290: IAM policy requires broad write access for this module to function
+  # checkov:skip=CKV_AWS_355: IAM policy requires wildcard resource for this module to function
   #checkov:skip=CKV_AWS_111:A general role for many ec2 instances
   #checkov:skip=CKV_AWS_109:A general role for many ec2 instances
   statement {
