@@ -1,4 +1,6 @@
 resource "aws_iam_role_policy" "ebsbackuplambda" {
+  # checkov:skip=CKV_AWS_272: Policy requires broad access for this module to function
+  # checkov:skip=CKV_AWS_356: Policy requires broad access for this module to function
   name   = "ebsbackuplambda-${random_string.label.result}"
   role   = aws_iam_role.ebsbackuplambda.id
   policy = data.aws_iam_policy_document.ebsbackuplambda.json
