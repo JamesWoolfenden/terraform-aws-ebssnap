@@ -6,6 +6,8 @@ resource "aws_lambda_function" "ebsbackup" {
   # checkov:skip=CKV_AWS_117: ADD REASON
   # checkov:skip=CKV_AWS_116: ADD REASON
   # checkov:skip=CKV_AWS_115: ADD REASON
+  # checkov:skip=CKV_AWS_272: code-signing not required for this lambda
+  # checkov:skip=CKV_AWS_363: runtime configurable via var.runtime
 
   function_name    = "ebsbackup_lambda_${random_string.label.result}"
   filename         = "${path.module}/lambda/ebsbackup-${random_string.label.result}.zip"
