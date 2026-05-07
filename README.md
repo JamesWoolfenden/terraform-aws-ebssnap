@@ -54,7 +54,7 @@ No requirements.
 ## Providers
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="provider_archive"></a> [archive](#provider\_archive) | n/a |
 | <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
 | <a name="provider_random"></a> [random](#provider\_random) | n/a |
@@ -67,7 +67,7 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [aws_cloudwatch_event_rule.ebsbackuptimer](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_event_rule) | resource |
 | [aws_cloudwatch_event_target.runebsbackuplambda](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_event_target) | resource |
 | [aws_iam_role.ebsbackuplambda](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
@@ -82,7 +82,7 @@ No modules.
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_EC2_INSTANCE_TAG"></a> [EC2\_INSTANCE\_TAG](#input\_EC2\_INSTANCE\_TAG) | Tag to identify the EC2 target instances of the Lambda Function | `string` | `"Backup"` | no |
 | <a name="input_RETENTION_DAYS"></a> [RETENTION\_DAYS](#input\_RETENTION\_DAYS) | Numbers of Days that the EBS Snapshots will be stored (INT) | `string` | `5` | no |
 | <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | Implements the common tags scheme | `map(any)` | n/a | yes |
@@ -96,7 +96,7 @@ No modules.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | <a name="output_lambda"></a> [lambda](#output\_lambda) | n/a |
 | <a name="output_role"></a> [role](#output\_role) | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
